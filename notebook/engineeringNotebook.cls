@@ -12,10 +12,6 @@
 \RequirePackage[english]{babel} % Language handling
 \RequirePackage[letterpaper, margin=1in]{geometry} % Page layout
 
-% Fonts and styling
-\RequirePackage{newtxtext} % Times New Roman font
-
-
 % Colors and hyperlinks
 \RequirePackage[dvipsnames, svgnames, x11names, table, xcdraw]{xcolor}
 \RequirePackage{hyperref}
@@ -85,7 +81,7 @@
 \setcounter{secnumdepth}{0} 
 
 % Paragraph spacing
-\setlength\parskip{1em plus 0.1em minus 0.2em}
+\setlength\parskip{0.5em plus 0.1em minus 0.2em}
 
 % Custom commands and utilities
 \newcommand{\fakesubsection}[1]{%
