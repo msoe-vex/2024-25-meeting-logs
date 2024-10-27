@@ -1,0 +1,99 @@
+\section{Strategy Meeting - Project Updates}
+\timestamp{Luke Gagnon, Leigh Goetsch}{[10/08/2024]}
+\attendees{Peter Wolfgramm, Andrew Needham, Miles Trompeter, Landon Van Mersbergen}
+
+\subsection{Meeting Goals}
+\begin{itemize}
+    \item Review progress on current project objectives
+    \item Discuss next steps for each project area
+    \item Identify any roadblocks or challenges
+    \item Plan for future strategy meetings
+\end{itemize}
+
+\subsection{Project Updates}
+The following is a summary of the progress made in each project area and the next steps planned for each group:
+
+\subsubsection{Leblib Path Planning}
+\textbf{Group:} Andrew, Peter, Salvin\\
+\textbf{Objective:} Set up the Leblib path planning library and begin integrating it with autonomous navigation and odometry.\\
+\textbf{Plan:}
+\begin{itemize}
+    \item Successfully set up the path planning library on the development environment.
+    \item Initial testing was not conducted yet; plan to test integration with the robot's autonomous systems and odometry tomorrow.
+\end{itemize}
+\textbf{Next Steps:}
+\begin{itemize}
+    \item Tomorrow, test the library with the robot's autonomous functionalities and odometry data.
+    \item Identify any adjustments or customizations needed for better integration.
+\end{itemize}
+
+\subsubsection{Robot Communication}
+\textbf{Group:} Luke, Leigh, Miles\\
+\textbf{Objective:} Establish a communication protocol between robots and test message reception.\\
+\textbf{Plan:}
+\begin{itemize}
+  \item Set up a basic test environment to verify correct message reception between robots.
+  \item Began discussing the communication protocol for inter-robot messaging, focusing on what specific data needs to be shared.
+\end{itemize}
+\textbf{Key Considerations for Communication Protocol:}
+\begin{itemize}
+  \item Location data: Essential for coordinating movements between robots.
+  \item Object detection data: Could be useful in determining shared understanding of obstacles or objectives.
+  \item Game state: Related to object detection, the state of the game (such as target detection or task progress) may need to be shared.
+  \item Help signal: To allow one robot to request assistance from another if necessary.
+\end{itemize}
+\textbf{Next Steps:}
+\begin{itemize}
+  \item Finalize the communication protocol, specifying the exact data types to be transmitted.
+  \item Implement and test the protocol between the robots.
+\end{itemize}
+
+\subsubsection{Task Abstraction}
+\textbf{Group:} Not assigned yet\\
+\textbf{Objective:} Develop a task management system for handling asynchronous tasks during autonomous robot operation.\\
+\textbf{Plan:}
+\begin{itemize}
+  \item Research two potential approaches: creating a custom task system vs. leveraging the PROS library's task management system.
+  \item Determine how events can be triggered within the system to better manage robot actions.
+\end{itemize}
+\textbf{Next Steps:}
+\begin{itemize}
+  \item Research both options: creating a custom task system vs. leveraging PROS.
+  \item Determine how events can be triggered within the system to better manage robot actions.
+\end{itemize}
+
+\subsubsection{Web Dashboard}
+\textbf{Status:} Paused / Peripheral\\
+\textbf{Objective:} Update and integrate the internal path planning interface to export JSON data.\\
+\textbf{Plan:}
+\begin{itemize}
+  \item The web dashboard interface, developed a few years ago, needs updates to ensure compatibility with our current system.
+  \item Initial review of legacy code has not yet been conducted.
+\end{itemize}
+\textbf{Next Steps:}
+\begin{itemize}
+  \item Review the legacy code to assess the current implementation.
+  \item Ensure the dashboard can export JSON data for use in other areas of the project.
+\end{itemize}
+
+\subsubsection{Website Maintenance}
+\textbf{Group:} Salvin, Andy\\
+\textbf{Objective:} Modernize the website and update the content.\\
+\textbf{Plan:}
+\begin{itemize}
+  \item The website is outdated and has dependency issues with npm, preventing updates in its current state.
+  \item Initial steps will involve resolving these dependency issues to make the site functional in modern environments.
+
+\end{itemize}
+\textbf{Content Updates Considered:}
+\begin{itemize}
+  \item Sponsor list.
+  \item Links to relevant GitHub repositories (pneumatic reverse engineering, senior design projects, web dashboard, website).
+  \item Past engineering notebooks, Onshape designs (past robots), and updated tournament statistics.
+  \item Contact information update.
+\end{itemize}
+\textbf{Next Steps:}
+\begin{itemize}
+  \item Fix the dependency issues.
+  \item Begin content updates as discussed, starting with sponsor lists and repository links.
+\end{itemize}
