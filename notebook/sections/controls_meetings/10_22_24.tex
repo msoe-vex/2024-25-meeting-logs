@@ -1,0 +1,97 @@
+\section{Tuesday Strategy Meeting}
+\timestamp{Luke Gagnon, Leigh Goetsch}{[10/22/2024]}{Peter Wolfgramm, Andrew Needham, Miles Trompeter}
+
+\subsection{Meeting Goals}
+\begin{itemize}
+    \item Try to figure out the reason behind VEXlink issues
+    \item VEXlink documentation reading
+    \item Get VEX AI team members GHOST project setup and running
+\end{itemize}
+
+\subsection{Discussion}
+\begin{itemize}
+    \item \href{https://drive.google.com/file/d/13mTA6BT7CPskJzh4YgsfAfoH9OgK75Hn/view?pli=1}{VEXlink Docs}
+    \item Excerpts:
+    \begin{itemize}
+        \item When multiple radios are connected to a V5 brain, the radio in the highest numbered smart port will be used for the controller VEXnet connection, to avoid errors
+        \item Data Rate:
+        \begin{itemize}
+            \item Maximum data rate for manager to worker robot is 1040 bytes/second.
+            \item Maximum data rate for worker to manager robot is 520 bytes/second.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\subsection{Results}
+\begin{itemize}
+    \item VEXlink issues are likely due to the order of the controller and the VEXlink device ports
+\end{itemize}
+
+\subsection{Action Items}
+\textbf{VEXU Team Tasks}
+\begin{itemize}
+  \item VEXlink\\
+  \textbf{Leigh, Miles}
+  \item LebLib\\
+  \textbf{Andrew}
+\end{itemize}
+
+\textbf{VEX AI Team Tasks}
+\begin{itemize}
+  \item Nano -> V5 microcontroller communication:
+  \begin{itemize}
+      \item How is the nano and the V5 microcontroller working together?
+      \item What is being processed on what?
+      \item Create a simple program to send a message from one to the other
+  \end{itemize}
+  \item ROS2 serial robot messaging
+  \begin{itemize}
+      \item How is ROS architected?
+      \item How is this useful in our use-case?
+      \item Write a publisher and subscriber script (or run the one in GHOST's example)
+  \end{itemize}
+  \item robot -> robot messaging (VEXlink)
+  \begin{itemize}
+      \item What messages should robots send each other
+      \item What message protocol do robotic systems usually use?
+      \item What message protocol should we use?
+      \item Use VEXlink PROs API to write a simple program to send a message from one robot to another.
+  \end{itemize}
+  \item Simulation - GHOST\\
+  \textbf{Evan, Salvin, Leigh}
+  \begin{itemize}
+      \item The sim software that GHOST uses is called Gazebo Sim
+      \item The python that the bash file ./scripts/launch\_sim.sh runs can be found at 04\_Sim/ghost\_sim/launch/start\_sim.launch.py
+      \item There is a typo that causes the world to not load in the sim env, will post the fix later tonight.
+      \item What information can the sim env store?
+      \item What is the filetype of the world and the model files?
+  \end{itemize}
+  \item Path planning - GHOST
+  \begin{itemize}
+      \item GHOST uses https://web.casadi.org/ for path planning
+      \item What does this library do?
+      \item What are the input and outputs for their algorithm?
+  \end{itemize}
+  \item MSOE Senior Design - Adversarial Strategy VEX Robot Program
+  \begin{itemize}
+      \item This is a senior design project from two years ago using RL 
+      \item If you are itching for more project setup, load up this project
+      \item How does this project represent a robot?
+      \item What information does the robot store?
+      \item How does the robot choose actions?
+  \end{itemize}
+\end{itemize}
+\textbf{Specific People:}
+\begin{itemize}
+  \item Nano Setup\\
+  \textbf{Evan, Salvin}
+  \begin{itemize}
+    \item Try following the instructions in this repo to setup your nano and run the example code
+  \end{itemize}
+  \item Rosie Newbie\\
+  \textbf{Andrew}
+  \begin{itemize}
+    \item Go to the AI Club Learning Tree and follow the instructions to practice requesting rosie and running jobs
+    \item I will have some files for you in the next couple days for this
+  \end{itemize}
+\end{itemize}
