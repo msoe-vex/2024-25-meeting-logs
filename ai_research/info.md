@@ -1,6 +1,6 @@
-This folder is for uploading the findings of the research.
+The `ai_research/logs` folder is for uploading your meeting / work logs. You can find the template for the meeting logs in the `templates/meeting_log.md` file or the `templates/meeting_log.tex` file.
 
-You can find the template for the findings in the `templates/findings.tex` file. The template is written in LaTeX, so you can use it to write your findings in LaTeX.
+The `ai_research/findings` folder is for uploading the findings of the research. You can find the template for the findings in the `templates/findings.tex` file.
 
 If you are not familiar with LaTeX, don't worry! You can write your findings in Markdown, and I will convert it to LaTeX for you. While the meeting logs are written in Markdown, the findings are written in LaTeX because it is easier to format this style of document in LaTeX.
 
