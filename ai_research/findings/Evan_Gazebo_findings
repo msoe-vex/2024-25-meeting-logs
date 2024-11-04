@@ -1,0 +1,122 @@
+\section*{Beginning With Gazebo}
+\timestamp{Evan Roegner}{[11/4/24]}{}
+
+\subsection*{Objective / Focus}
+% Briefly describe the goal of this topic. Try to explain what you expolored in the topic you chose.
+% Example: The goal of this exploration was to understand the ROS2 environment and how to set up a simulation environment for the GHOST project.
+The goal for this was to explore the gazebo simulation to determine what its components are, and what role they serve and can do.
+
+\subsection*{Questions Explored}
+% List the specific questions or areas you focused on. You can paste the questions you have in the exploration topic and add any you found during the exploration.
+\begin{itemize}
+    \item What information can the sim environment store?
+    \item What is the filetype of the world and model files?
+\end{itemize}
+% Example:
+% \begin{itemize}
+%     \item What information can the sim env store?
+%     \item What is the filetype of the world and the model files?
+%     \item How can we interact with the simulation environment?
+% \end{itemize}
+
+\subsection*{Steps Taken / Methodology}
+% Document the exact steps you followed, including paths to relevant files and commands used. If you tried several approaches, list them as separate lists.
+\begin{enumerate}
+    \item Fixed the typo in the start\_sim\_launch file.
+    \item Found what files were being used to create the world and the objects/robots in it
+    \item Looked into those files to determine exactly what they actually were
+    \item Changed the filepath being used in start sim launch to accept files from a local directory
+\end{enumerate}
+% Example:
+% \testbf{Exploration Steps:}
+% \begin{enumerate}
+%     \item Setup ROS2 environment following the instructions in the GHOST project documentation.
+%     \item Launch the simulation environment using the script `launch_sim.sh` in the `scripts` directory.
+%     \item Explore the simulation environment in the "default.world" file in the `04_Sim/ghost_sim/worlds` directory and the "models" menu in the Gazebo GUI.
+% \end{enumerate}
+
+\subsection*{Paths to Key Files / Code Locations}
+% Provide paths to relevant scripts, configuration files, or datasets used. If you used a script, provide the path to the script and the command used to run it.
+\begin{itemize}
+    \item start\_sim\_launch: scripts -> start\_sim\_launch.py, run from VEXU\_GHOST directory with ./scripts/launch\_sim.sh
+    \item World files: 04\_Sim -> ghost\_sim -> worlds
+    \item Robot xacro files: 04\_Sim -> ghost\_sim -> urdf
+    \item Macro xacro files: 04\_Sim -> ghost\_sim -> urdf -> macros
+    \item Typo, local directory change, world selection: start\_sim\_launch Line 70
+    \item Robot selection: start\_sim\_launch Line 20
+\end{itemize}
+% Example:
+% \begin{itemize}
+%     \item **Example Script:** `./scripts/launch_sim.sh`
+%     \item **World Configuration File:** `04_Sim/ghost_sim/worlds/default.world`
+%     \item **API Documentation:** [Link to relevant API or repo]
+% \end{itemize}
+
+\subsection*{Findings / Insights}
+% Summarize the key things you learned or discovered.
+\begin{itemize}
+    \item Typo and local directory line should be changed to world\_file = os.path.join(home\_dir, "VEXU\_GHOST", "04\_Sim", "ghost\_sim", "worlds", **INSERT WORLD NAME HERE**")
+    \item start\_sim\_launch.py launches the simulation when run. launch\_setup method contains a single variable that can be changed to switch the robot that is being simulated. This means that robots are not defined in the world, but as their own file which is placed in an existing world by this script. This would be used to change the world the robot is being loaded into (line 70) as well as the robot being loaded (line 20). Also allows you to specify a joystick to use in the simulation.
+    \item .world files are XML files which contains all of the information about a given environment a robot can be placed into. Contains the placement and state of all objects in the environment. Editing these files allow you to add physical objects into the simulation as well as change various attributes about the simulation (gravity, kinematics, etc). Many attributes in the world file can be modified while the program is running (this does not change the actual file, it just changes it in the simulation). This is used in start\_sim\_launch to create the environment the robot will be placed into.
+    \item xacro files are used to define various macros and the robots that they make up. There are xacro files for robots and separate files for the macros. The macros are xml representations of robot parts
+    \item Macro xacro files Contain information about the various parts of the robot, by default there are 2 types: actuators and sensors. Sensors are anything the robot can use to learn things about its environment and actuators are types of motors. The sensors macro file contains the following: 
+    \begin{itemize}
+        \item lidar\_macro - A simulation of a lidar sensor which shoots raycasts in a circle 
+        \item imu\_macro - A simulation of a sensor that gives a robot's acceleration and velocity with simulated uncertainty
+    \end{itemize}
+    The actuators macro file contains the following: 
+    \begin{itemize}
+        \item v5\_motor\_macro - A generic motor with a number of settings similar to an actual motor
+        \item joint\_pid\_macro - A generic motor with a PID loop, with settings similar to an actual PID motor
+    \end{itemize}
+\end{itemize}
+% Example:
+% \begin{itemize}
+%     \item The simulation environment is stored in the `default.world` file in the `04_Sim/ghost_sim/worlds` directory.
+%     \item The simulation environment can store information about the world, models, and other simulation parameters.
+%     \item The simulation environment can be interacted with using the Gazebo GUI and the `gz` command-line tool.
+%     \item GHOST has setup a controller interface for the robot in the `ghost_control` package.
+% \end{itemize}
+
+\subsection*{Challenges / Issues}
+% Document any blockers, bugs, or unresolved questions. Include error messages if relevant.
+\begin{itemize}
+    \item [Challenge Title] - [How you attempted to solve it]
+\end{itemize}
+% Example:
+% \begin{itemize}
+%    \item [Gazebo GUI Not Responding] – Tried restarting the simulation environment and the GUI, but the issue persisted.
+%    \item [Error: Unable to Load Model] – Received an error message when trying to load a custom model into the simulation environment.
+%    \item [ROS2 Environment Not Found] – The ROS2 environment was not found when trying to launch the simulation.
+% \end{itemize}
+
+\subsection*{Code Snippets / Commands Used}
+% Include any important code snippets, shell commands, or configurations that were part of the exploration.
+\begin{lstlisting}
+    
+\end{lstlisting}
+\begin{lstlisting}
+./scripts/launch_sim.sh
+    
+world\_file = os.path.join(home\_dir, "VEXU\_GHOST", "04\_Sim", "ghost\_sim", "worlds", **INSERT WORLD NAME HERE**")
+
+
+\end{lstlisting}
+% Example:
+% \textbf{Launch Simulation Environment:}
+% \begin{lstlisting}[language=bash]
+% # Example command to launch the simulation environment
+% ./scripts/launch_sim.sh
+% \end{lstlisting}
+% \textbf{Graph Plotting in Python:}
+% \begin{lstlisting}[language=python]
+%     # Example Python code snippet
+%     import numpy as np
+%     import matplotlib.pyplot as plt
+
+%     x = np.linspace(0, 10, 100)
+%     y = np.sin(x)
+
+%     plt.plot(x, y)
+%     plt.show()
+% \end{lstlisting}
