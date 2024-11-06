@@ -1,16 +1,15 @@
-\section*{CasADi and GHOST Path planning}
-\timestamp{Andrew Needham}{[10/29/24]}{}
+\section*{LemLib implementation}
+\timestamp{Andrew Needham}{[11/06/24]}{}
 
-\subsection*{Research CasADi library and GHOST implementation of path planning}
+\subsection*{Research LemLib library}
 % Briefly describe the goal of this topic. Try to explain what you expolored in the topic you chose.
 % Example: The goal of this exploration was to understand the ROS2 environment and how to set up a simulation environment for the GHOST project.
 
 \subsection*{Questions Explored}
 % List the specific questions or areas you focused on. You can paste the questions you have in the exploration topic and add any you found during the exploration.
 \begin{itemize}
-    \item What is CasADi and what does it do?
-    \item How does GHOST do path planning?
-    \item What are the inputs and outputs of the algorithm?
+    \item What is LemLib and what does it do?
+    \item How can odomentry be used to control the robot?
 \end{itemize}
 % Example:
 % \begin{itemize}
@@ -22,8 +21,8 @@
 \subsection*{Methodology}
 % Document the exact steps you followed, including paths to relevant files and commands used. If you tried several approaches, list them as separate lists.
 \begin{enumerate}
-    \item Reading through CasADi documentation
-    \item Checking GHOST public repo for CasADi implementation and path planning code
+    \item Reading through LemLib documentation to configure the robot
+    \item Use Jerry.io and/or CasADi to plan paths to be used with LemLib
 \end{enumerate}
 % Example:
 % \testbf{Exploration Steps:}
@@ -36,8 +35,8 @@
 \subsection*{Code Locations}
 % Provide paths to relevant scripts, configuration files, or datasets used. If you used a script, provide the path to the script and the command used to run it.
 \begin{itemize}
-    \item GHOST VEXU Repository: \href{https://github.com/VEXU-GHOST/VEXU_GHOST}{link}
-    \item Swerve drive trajectory generation \href{https://github.com/VEXU-GHOST/VEXU_GHOST/blob/develop/11_Robots/ghost_swerve_mpc_planner/src/casadi_swerve_model_generation.cpp}{link}
+    \item LemLib source code repository (stable): \href{https://github.com/LemLib/LemLib/tree/stable/}{link}
+    \item LemLib documentation: \href{https://lemlib.readthedocs.io/en/stable/}{link}
 \end{itemize}
 % Example:
 % \begin{itemize}
@@ -49,9 +48,9 @@
 \subsection*{Findings}
 % Summarize the key things you learned or discovered.
 \begin{itemize}
-    \item CasADi is a general purpose library with the focus of solving optimzation problems given a set of constraints
-    \item Inputs of CasADi is a function of multiple variables and a number of constraints for the function
-    \item The GHOST sytems uses serialized messaging to communicate between different classes and parts of the robot
+    \item LemLib supports odometry that tracks the position of the robot
+    \item PID tuning can be used to get accurate measurements
+    \item LemLib also supports pure pursuit which can be used to create complex paths for the robot to follow
 \end{itemize}
 % Example:
 % \begin{itemize}
