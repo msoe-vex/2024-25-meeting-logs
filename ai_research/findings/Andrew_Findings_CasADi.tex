@@ -3,7 +3,7 @@
 
 \subsection*{Research CasADi library and GHOST implementation of path planning}
 The goal for this exploration is to determine how to use the CasADi library to generate path trajectories for the robot
-% Briefly describe the goal of this topic. Try to explain what you expolored in the topic you chose.
+% Briefly describe the goal of this topic. Try to explain what you explored in the topic you chose.
 % Example: The goal of this exploration was to understand the ROS2 environment and how to set up a simulation environment for the GHOST project.
 
 \subsection*{Questions Explored}
@@ -39,9 +39,10 @@ The goal for this exploration is to determine how to use the CasADi library to g
 \subsection*{Code Locations}
 % Provide paths to relevant scripts, configuration files, or datasets used. If you used a script, provide the path to the script and the command used to run it.
 \begin{itemize}
-    \item GHOST VEXU Repository: \href{https://github.com/VEXU-GHOST/VEXU_GHOST}{link}
-    \item Swerve drive trajectory generation \href{https://github.com/VEXU-GHOST/VEXU_GHOST/blob/develop/11_Robots/ghost_swerve_mpc_planner/src/casadi_swerve_model_generation.cpp}{link}
+    \item GHOST VEX-U Repository: \href{https://github.com/VEXU-GHOST/VEXU_GHOST}{link}
+    \item GHOST Swerve drive trajectory generation \href{https://github.com/VEXU-GHOST/VEXU_GHOST/blob/develop/11_Robots/ghost_swerve_mpc_planner/src/casadi_swerve_model_generation.cpp}{link}
     \item Test program repo: \href{https://github.com/satsinush/CasADi-Test.git}{link}
+    \item CasADi Robot Path Planning example: \href{https://github.com/tianchenji/path-planning.git}{link}
 \end{itemize}
 % Example:
 % \begin{itemize}
@@ -53,9 +54,9 @@ The goal for this exploration is to determine how to use the CasADi library to g
 \subsection*{Findings}
 % Summarize the key things you learned or discovered.
 \begin{itemize}
-    \item CasADi is a general purpose library with the focus of solving optimzation problems given a set of constraints
+    \item CasADi is a general purpose library with the focus of solving optimization problems given a set of constraints
     \item Inputs of CasADi is a function of multiple variables and a number of constraints for the function
-    \item The GHOST sytems uses serialized messaging to communicate between different classes and parts of the robot
+    \item The GHOST systems uses serialized messaging to communicate between different classes and parts of the robot
 \end{itemize}
 % Example:
 % \begin{itemize}
@@ -68,8 +69,8 @@ The goal for this exploration is to determine how to use the CasADi library to g
 \subsection*{Issues}
 % Document any blockers, bugs, or unresolved questions. Include error messages if relevant.
 \begin{itemize}
-    \item Unable to locate where in the GHOST repo CasADi was implmented for a tank drive
-    \item Unable to generate a path that minimizes the time taken to get to the target point
+    \item Unable to locate where in the GHOST repo CasADi was implemented for a tank drive
+    \item Unable to consistently generate a path that minimizes the time taken to get to the target point
 \end{itemize}
 % Example:
 % \begin{itemize}
