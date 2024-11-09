@@ -1,0 +1,30 @@
+\section{CasADi Test Program}
+\timestamp{Andrew Needham}{[11/08/24]}{}
+
+\subsection{Goals}
+\begin{itemize}
+    \item Update the python test path program to minimize the amount of time to traveled instead of just the path length
+\end{itemize}
+
+\subsection{Methods}
+\begin{itemize}
+    \item Use ChatGPT to generate a basic test program and iterate from there to fit our use case
+    \item Use the CasADi documentation to figure out what inputs and outputs are needed
+    \item Find other existing programs to build off of
+\end{itemize}
+
+\subsection{Results}
+\begin{itemize}
+    \item Was able to get a solver working that minimizes the amount of time
+    \item The solver also has constraints for maximum velocity and acceleration
+    \item The robot starts and ends at a complete stop
+    \item The program is very finicky  at the moment, any small change in the constraints or staring values can cause the solver to not be able to find a solution
+    \item GitHub repo for CasADi test program: \href{https://github.com/satsinush/CasADi-Test.git}{https://github.com/satsinush/CasADi-Test.git}
+    \item GitHub repo for another users implementation: \href{https://github.com/tianchenji/path-planning.git}{https://github.com/tianchenji/path-planning.git}
+\end{itemize}
+
+\subsection{Action Items}
+\begin{itemize}
+    \item Will use the tianchenji/path-planning.git repo to learn how to better implement CasADi
+    \item After that, will work on converting the Python program to a C++ implementation
+\end{itemize}
