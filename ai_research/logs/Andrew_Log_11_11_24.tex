@@ -1,0 +1,31 @@
+\section{CasADi Test Program}
+\timestamp{Andrew Needham}{[11/11/24]}{}
+
+\subsection{Goals}
+\begin{itemize}
+    \item Update the python test path program to follow the laws of physics and come to a complete stop at start and end points
+\end{itemize}
+
+\subsection{Methods}
+\begin{itemize}
+    \item Iterate the path planning repo to fit our use case
+    \item Use the CasADi documentation to figure out what inputs and outputs are needed
+    \item Utilize ChatGPT to quickly develop the program
+\end{itemize}
+
+\subsection{Results}
+\begin{itemize}
+    \item Was able to get a solver working that follows a smooth path and limits the maximum speed and velocity
+    \item The solver works in about 0.1 seconds so it will be able to calculate paths in real time during the match
+    \item Currently the program has a static time interval and a variable amount of steps to look into
+    \item GitHub repo for CasADi test program: \href{https://github.com/satsinush/CasADi-Test.git}{https://github.com/satsinush/CasADi-Test.git}
+    \item GitHub repo for another users implementation: \href{https://github.com/tianchenji/path-planning.git}{https://github.com/tianchenji/path-planning.git}
+\end{itemize}
+
+\subsection{Action Items}
+\begin{itemize}
+    \item Will update the program to change the units to inches so that it can be used with LemLib
+    \item Will research how LemLib controls the robot based on a list of points
+    \item The program can be updated to use a set number of steps and a variable amount of time in between them
+    \item After that, will work on converting the Python program to a C++ implementation
+\end{itemize}
