@@ -1,0 +1,93 @@
+\section*{Powering Jetson Orin Nano Over Battery}
+\timestamp{Evan Roegner}{[11/14/24]}{}
+
+\subsection*{Objective / Focus}
+% Briefly describe the goal of this topic. Try to explain what you expolored in the topic you chose.
+% Example: The goal of this exploration was to understand the ROS2 environment and how to set up a simulation environment for the GHOST project
+The goal for this was figure out a method of powering the Jetson Orin Nano off of a 5V USB Power bank
+
+\subsection*{Questions Explored}
+% List the specific questions or areas you focused on. You can paste the questions you have in the exploration topic and add any you found during the exploration.
+\begin{itemize}
+    \item What ports on the nano accept power?
+    \item What connectors or cables are needed?
+    \item How much power does the Nano need?
+    \item How can USB-A/USB-C power out be converted to a standard that the nano accepts?
+\end{itemize}
+% Example:
+% \begin{itemize}
+%     \item What information can the sim env store?
+%     \item What is the filetype of the world and the model files?
+%     \item How can we interact with the simulation environment?
+% \end{itemize}
+
+\subsection*{Steps Taken / Methodology}
+% Document the exact steps you followed, including paths to relevant files and commands used. If you tried several approaches, list them as separate lists.
+\begin{enumerate}
+    \item Nano usb-c plugged into 15V=3A power
+    \item Watched NVIDIA Jetson on Battery Power video
+    \item Searched for 5V to 19V step-up converter
+    \item Looked into potentially using POE
+\end{enumerate}
+% Example:
+% \testbf{Exploration Steps:}
+% \begin{enumerate}
+%     \item Setup ROS2 environment following the instructions in the GHOST project documentation.
+%     \item Launch the simulation environment using the script `launch_sim.sh` in the `scripts` directory.
+%     \item Explore the simulation environment in the "default.world" file in the `04_Sim/ghost_sim/worlds` directory and the "models" menu in the Gazebo GUI.
+% \end{enumerate}
+
+\subsection*{Findings / Insights}
+% Summarize the key things you learned or discovered.
+\begin{itemize}
+    \item Our battery outputs at 5V, but the nano needs 9V-19V
+    \item We can convert between voltages with a step-up converter
+    \item Most step-up converters on the market that convert from 5V usb to 9V-19V barrel only provide up to 10 watts, which is not enough
+    \item If we get an expansion board, Power over Ethernet is possible, but likely impractical
+    \item Absolute minimum amount of power would be 15 Watts, but more is recommended
+    \item Inner barrel positive, outer is negative
+\end{itemize}
+% Example:
+% \begin{itemize}
+%     \item The simulation environment is stored in the `default.world` file in the `04_Sim/ghost_sim/worlds` directory.
+%     \item The simulation environment can store information about the world, models, and other simulation parameters.
+%     \item The simulation environment can be interacted with using the Gazebo GUI and the `gz` command-line tool.
+%     \item GHOST has setup a controller interface for the robot in the `ghost_control` package.
+% \end{itemize}
+
+\subsection*{Items needed}
+\begin{itemize}
+    \item 5V USB -> 9V-19V 5.5mmx2.5mm Barrel, >= 20 Watt output
+    \item Alternatively, generic 5V->9V-19V step-up adaptor with correct connections soldered on would work
+\end{itemize}
+
+\subsection*{Challenges / Issues}
+% Document any blockers, bugs, or unresolved questions. Include error messages if relevant.
+\begin{itemize}
+    \item Need to find an applicable power adaptor, or potentially create our own with a generic step-up adapter.
+\end{itemize}
+% Example:
+% \begin{itemize}
+%    \item [Gazebo GUI Not Responding] – Tried restarting the simulation environment and the GUI, but the issue persisted.
+%    \item [Error: Unable to Load Model] – Received an error message when trying to load a custom model into the simulation environment.
+%    \item [ROS2 Environment Not Found] – The ROS2 environment was not found when trying to launch the simulation.
+% \end{itemize}
+
+% Example:
+% \textbf{Launch Simulation Environment:}
+% \begin{lstlisting}[language=bash]
+% # Example command to launch the simulation environment
+% ./scripts/launch_sim.sh
+% \end{lstlisting}
+% \textbf{Graph Plotting in Python:}
+% \begin{lstlisting}[language=python]
+%     # Example Python code snippet
+%     import numpy as np
+%     import matplotlib.pyplot as plt
+
+%     x = np.linspace(0, 10, 100)
+%     y = np.sin(x)
+
+%     plt.plot(x, y)
+%     plt.show()
+% \end{lstlisting}
