@@ -8,44 +8,44 @@
         \item Figured out the old version of LemLib was causing problems when calculating robot position
         \item Created a new PROS project with the latest version of LemLib which worked correctly
         \item Created constants to initialize EZTemplate and LemLib robot configurations
-        \textbf{LemLib Test Project}
-        \begin{lstlisting}[language=c++]
-        const vector<int> leftMotorPorts = {-5,8,-9};
-        const vector<int> rightMotorPorts = {-3,4,-11};
-        const int motorRPM = 600;
-        const pros::motor_gearset_e_t motorGearSet = pros::motor_gearset_e_t::E_MOTOR_GEAR_600;
-        const int imuPort = 16;
-        const float driveWheelDiameter = 3.25;
-        const float trackingWheelDiameter = 2;
-        const float driveRPM = 360;
-        const float driveTrackWidth = 10.75;
-        const float verticalTrackingWheelOffset = 1.625;
-        const float horizontalTrackingWheelOffset = 2.75;
-        const int verticalEncoderPortTop = 3;
-        const int verticalEncoderPortBottom = 4;
-        const int horizontalEncoderPortTop = 2;
-        const int horizontalEncoderPortBottom = 1;
-        \end{lstlisting}
+\textbf{LemLib Test Project}
+\begin{lstlisting}[language=c++]
+const vector<int> leftMotorPorts = {-5,8,-9};
+const vector<int> rightMotorPorts = {-3,4,-11};
+const int motorRPM = 600;
+const pros::motor_gearset_e_t motorGearSet = pros::motor_gearset_e_t::E_MOTOR_GEAR_600;
+const int imuPort = 16;
+const float driveWheelDiameter = 3.25;
+const float trackingWheelDiameter = 2;
+const float driveRPM = 360;
+const float driveTrackWidth = 10.75;
+const float verticalTrackingWheelOffset = 1.625;
+const float horizontalTrackingWheelOffset = 2.75;
+const int verticalEncoderPortTop = 3;
+const int verticalEncoderPortBottom = 4;
+const int horizontalEncoderPortTop = 2;
+const int horizontalEncoderPortBottom = 1;
+\end{lstlisting}
 
         \item Created a PROS task to control the claw without interrupting the main leftMotorPorts
-        \textbf{LemLib Test Project}
-        \begin{lstlisting}[language=c++]
-        bool clawOn = false;
-        void toggleClaw(){
-        pros::Task claw_task([&]() {
-                if(clawOn){
-                    Claw2.set_value(0);
-                    pros::delay(100);
-                    Claw1.set_value(0);
-                }else{
-                    Claw1.set_value(1);
-                    pros::delay(100);
-                    Claw2.set_value(1);
-                }
-                clawOn = !clawOn;
-            });
+\textbf{LemLib Test Project}
+\begin{lstlisting}[language=c++]
+bool clawOn = false;
+void toggleClaw(){
+pros::Task claw_task([&]() {
+        if(clawOn){
+            Claw2.set_value(0);
+            pros::delay(100);
+            Claw1.set_value(0);
+        }else{
+            Claw1.set_value(1);
+            pros::delay(100);
+            Claw2.set_value(1);
         }
-        \end{lstlisting}
+        clawOn = !clawOn;
+    });
+}
+\end{lstlisting}
     \end{itemize}
 \end{itemize}
 
