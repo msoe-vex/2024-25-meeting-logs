@@ -1,0 +1,31 @@
+\section{CasADi Test Program}
+\timestamp{Andrew Needham}{[11/26/24]}{}
+
+\subsection{Goals}
+\begin{itemize}
+    \item Refactor the test program to properly constrain the position, velocity, and acceleration of the robot
+    \item Update the solver to avoid the middle of the field
+\end{itemize}
+
+\subsection{Methods}
+\begin{itemize}
+    \item Use the CasADi documentation to figure out what inputs and outputs are needed
+    \item Review the existing code to determine what needs to be changed and what can be removed
+\end{itemize}
+
+\subsection{Results}
+\begin{itemize}
+    \item The new solver now used proper constraints without redundancy
+    \item The Numpy graph was updated to show a simplified view of the field and path
+    \item GitHub repo for CasADi test program: \href{https://github.com/msoe-vex/CasADi-Test.git}{https://github.com/msoe-vex/CasADi-Test.git}
+    \item GitHub repo for another users implementation: \href{https://github.com/tianchenji/path-planning.git}{https://github.com/tianchenji/path-planning.git}
+\end{itemize}
+
+\subsection{Action Items}
+\begin{itemize}
+    \item Need to figure out how to make the robot avoid the middle of the field without hard constraining it
+    \item Need to make sure the LemLib max speed parameter is being used correctly so that the path run properly
+    \item Add an option to change the number of points and time step dynamically
+    \item Will work on updating the cost function to minimize the amount of time
+    \item After that, will work on converting the Python program to a C++ implementation
+\end{itemize}

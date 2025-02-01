@@ -1,0 +1,29 @@
+\section{CasADi Test Program}
+\timestamp{Andrew Needham}{[11/19/24]}{}
+
+\subsection{Goals}
+\begin{itemize}
+    \item Update the python test path program to use diamond shaped obstacle instead of circles
+\end{itemize}
+
+\subsection{Methods}
+\begin{itemize}
+    \item Use the CasADi documentation to figure out what inputs and outputs are needed
+    \item Utilize ChatGPT to quickly develop the program
+\end{itemize}
+
+\subsection{Results}
+\begin{itemize}
+    \item The diamond shape programs led the solver to run into an issue where there are too few degrees of freedom
+    \item GitHub repo for CasADi test program: \href{https://github.com/msoe-vex/CasADi-Test.git}{https://github.com/msoe-vex/CasADi-Test.git}
+    \item GitHub repo for another users implementation: \href{https://github.com/tianchenji/path-planning.git}{https://github.com/tianchenji/path-planning.git}
+\end{itemize}
+
+\subsection{Action Items}
+\begin{itemize}
+    \item Need to figure out how to implement diamond shaped obstacles, or regular polygons in general
+    \item May need to use circles to approximate location of obstacles
+    \item Will update the program to change the units to inches so that it can be used with LemLib
+    \item Will research how LemLib controls the robot based on a list of points, and look into exporting in that format
+    \item After that, will work on converting the Python program to a C++ implementation
+\end{itemize}
