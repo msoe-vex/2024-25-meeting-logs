@@ -1,0 +1,36 @@
+\section{VEX Reinforcement Learning}
+\timestamp{Andrew Needham}{[2/7/25]}{}
+
+\subsection{Goals}
+\begin{itemize}
+    \item Create a reinforcement learning environment for the VEX robot
+    \item Train the robot to use an optimal strategy to score as many points as possible
+    \item Update the structure of the environment to better represent the robot and field
+\end{itemize}
+
+\subsection{Methods}
+\begin{itemize}
+    \item Use Gymnasium and Stable Baselines3 to create the environment and train the robot
+    \item Use Slurm to run the training script on the cluster to train quickly
+\end{itemize}
+
+\subsection{Results}
+\begin{itemize}
+    \item Added wall stakes to the environment and added actions to move to and ad rings to stakes
+    \item Simplified the observations space and added time remaining to the observation space
+    \item Fixed some of the restrictions on the actions to account for game rules and physical limitations
+    \item Adding a reward for climbing makes the robot reach a local maximum and not explore other actions
+    \item Experimented with the reward system to give points based on estimated final score at the end of the episode
+    \item Noticed that training usually peaked around 2 million steps and slowly started to decline
+    \item It seems that after a certain number of steps, the robot starts to overfit the environment and starts repeating the same actions
+    \item Updated code to GitHub repo: \href{https://github.com/msoe-vex/VEX-AI-Reinforcement-Learning.git}{https://github.com/msoe-vex/VEX-AI-Reinforcement-Learning.git}
+\end{itemize}
+
+\subsection{Action Items}
+\begin{itemize}
+    \item Update the structure of the environment to better represent the robot and field
+    \item Add different colors for rings
+    \item Add probability of actions succeeding
+    \item Update the environment to account for unknown and missing information about elements on the field
+    \item Experiment with the PPO parameters to see if the robot can learn more effectively
+\end{itemize}
