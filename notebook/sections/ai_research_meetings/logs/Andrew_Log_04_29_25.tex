@@ -1,0 +1,34 @@
+\section{Multi Agent Reinforcement Learning}
+\timestamp{Andrew Needham}{[4/29/25]}{}
+
+\subsection{Goals}
+\begin{itemize}
+    \item Utilize multi agent simulation to train multiple robots to work together
+    \item Build off of the existing simulation environment to allow for multiple robots to be trained at once
+\end{itemize}
+
+\subsection{Methods}
+\begin{itemize}
+    \item Use PettingZoo library to create a multi-agent environment
+    \item Use RlLib from Ray to train the agents in the multi-agent environment
+    \item Test the multi-agent environment with multiple robots to ensure they can work together effectively
+\end{itemize}
+
+\subsection{Results}
+\begin{itemize}
+    \item The new environment was successfully created using the PettingZoo library
+    \item Actions are sent to the model in an synchonized format, and each action is performed in chronological order
+    \item After each action, the "robot time" is updated to reflect the time taken for the action to be performed
+    \item Only the robot with the lowest "robot time" is allowed to take an action, which prevents multiple robots from taking actions at the same time
+    \item The multi-agent environment was successfully tested with multiple robots, and they were able to work together effectively
+    \item The agents can learn from randomized environment states to learn generalized game strategies
+    \item The agents don't currently have information about the other agents, so they must learn to work together without communication
+    \item Updated code to GitHub repo: \href{https://github.com/msoe-vex/VEX-AI-Reinforcement-Learning.git}{https://github.com/msoe-vex/VEX-AI-Reinforcement-Learning.git}
+\end{itemize}
+
+\subsection{Action Items}
+\begin{itemize}
+    \item Create script to compile the policy into a compact inferencing model that can be used in the VEX program
+    \item Integrate the compiled model with communication between the VEX program and the Jetson Nano running the model
+    \item Test running the model on the Jetson Nano to ensure it can run in real-time
+\end{itemize}
