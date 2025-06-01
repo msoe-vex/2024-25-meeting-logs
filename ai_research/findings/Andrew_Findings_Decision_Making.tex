@@ -1,0 +1,163 @@
+\section*{Decision Making Research}
+\timestamp{Andrew Needham}{[1/23/2025]}{}
+
+\subsection*{Decision Making Exploration}
+
+This section will explore different options for decision making in the context of VEX AI.
+The goal is to understand different approaches and determine the best method for our use case.
+
+% Briefly describe the goal of this topic. Try to explain what you explored in the topic you chose.
+% Example: The goal of this exploration was to understand the ROS2 environment and how to set up a simulation environment for the GHOST project.
+
+\subsection*{Questions Explored}
+% List the specific questions or areas you focused on. You can paste the questions you have in the exploration topic and add any you found during the exploration.
+\begin{itemize}
+    \item What options for decision making are available in the context of VEX AI?
+    \item How do different decision-making algorithms compare in terms of complexity and performance?
+    \item How will the decision-making process be integrated with the rest of the VEX AI system?
+    \item How long will it take to train each model?
+\end{itemize}
+% Example:
+% \begin{itemize}
+%     \item What information can the sim env store?
+%     \item What is the filetype of the world and the model files?
+%     \item How can we interact with the simulation environment?
+% \end{itemize}
+
+\subsection*{Methodology}
+% Document the exact steps you followed, including paths to relevant files and commands used. If you tried several approaches, list them as separate lists.
+\begin{enumerate}
+    \item Research from multiple sources was used to understand the different decision-making algorithms available.
+\end{enumerate}
+% Example:
+% \testbf{Exploration Steps:}
+% \begin{enumerate}
+%     \item Setup ROS2 environment following the instructions in the GHOST project documentation.
+%     \item Launch the simulation environment using the script `launch_sim.sh` in the `scripts` directory.
+%     \item Explore the simulation environment in the "default.world" file in the `04_Sim/ghost_sim/worlds` directory and the "models" menu in the Gazebo GUI.
+% \end{enumerate}
+
+\subsection*{Resources}
+% Provide paths to relevant scripts, configuration files, or datasets used. If you used a script, provide the path to the script and the command used to run it.
+\begin{itemize}
+    \item \url{https://towardsdatascience.com/reinforcement-learning-q-learning-with-decision-trees-ecb1215d9131}
+    \item \url{https://www.geeksforgeeks.org/q-learning-in-python/}
+    \item \url{https://www.geeksforgeeks.org/decision-tree-introduction-example/}
+\end{itemize}
+% Example:
+% \begin{itemize}
+%     \item **Example Script:** `./scripts/launch_sim.sh`
+%     \item **World Configuration File:** `04_Sim/ghost_sim/worlds/default.world`
+%     \item **API Documentation:** [Link to relevant API or repo]
+% \end{itemize}
+
+\subsection*{Findings}
+
+\subsubsection{Decision Tree}
+% Summarize the key things you learned or discovered.
+\begin{itemize}
+    \item Decision trees are a simple and interpretable way to make decisions based on input features.
+    \item They are easy to understand and visualize, making them useful for debugging and explaining decisions.
+    \item They can be used for both classification and regression tasks.
+    \item Decision trees can handle both numerical and categorical data.
+    \item Decision trees can be prone to over-fitting, especially with deep trees.
+\end{itemize}
+% Example:
+% \begin{itemize}
+%     \item The simulation environment is stored in the `default.world` file in the `04_Sim/ghost_sim/worlds` directory.
+%     \item The simulation environment can store information about the world, models, and other simulation parameters.
+%     \item The simulation environment can be interacted with using the Gazebo GUI and the `gz` command-line tool.
+%     \item GHOST has setup a controller interface for the robot in the `ghost_control` package.
+% \end{itemize}
+
+\subsubsection{Q-Learning}
+% Summarize the key things you learned or discovered.
+\begin{itemize}
+    \item Q-Learning is a model-free reinforcement learning algorithm that learns a policy to maximize rewards.
+    \item It uses a Q-table to store the expected rewards for each state-action pair.
+    \item Q-Learning is an off-policy algorithm, meaning it learns from the optimal policy rather than the one it follows.
+    \item It is a simple and effective algorithm for learning optimal policies in discrete environments.
+    \item Q-Learning can be combined with decision trees to create more complex decision-making systems.
+    \item Q-Learning can be used for both discrete and continuous action spaces.
+    \item Q-Learning can be computationally expensive for large state-action spaces.
+    \item Q-Learning can be used to solve problems with delayed rewards and sparse feedback.
+\end{itemize}
+% Example:
+% \begin{itemize}
+%     \item The simulation environment is stored in the `default.world` file in the `04_Sim/ghost_sim/worlds` directory.
+%     \item The simulation environment can store information about the world, models, and other simulation parameters.
+%     \item The simulation environment can be interacted with using the Gazebo GUI and the `gz` command-line tool.
+%     \item GHOST has setup a controller interface for the robot in the `ghost_control` package.
+% \end{itemize}
+
+\subsection{Comparison}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{6cm}|p{6cm}|}
+    \hline
+        \textbf{Criteria} & \textbf{Decision Trees} & \textbf{Q-Learning} \\ \hline
+        \textbf{Problem Type} & Supervised Learning (Classification/Regression) & Reinforcement Learning (Optimal decision-making, learning policies) \\ \hline
+        \textbf{Data Requirements} & Requires labeled data (features and targets). & Requires an environment with a defined state, actions, and reward system. \\ \hline
+        \textbf{Interpretability} & Highly interpretable. Models are represented as simple decision paths. & Difficult to interpret directly. Learned policy is stored in a Q-table or approximated by neural networks. \\ \hline
+        \textbf{Adaptability} & Limited to pre-labeled data. Cannot adapt to dynamic changes. & Can adapt to dynamic environments through exploration and reward updates. \\ \hline
+        \textbf{Scalability} & Scales well for small to medium-sized datasets but can struggle with very large feature spaces. & Handles large, continuous state-action spaces with extensions like Deep Q-Learning (DQN). \\ \hline
+        \textbf{Complexity} & Relatively simple to implement and train. & Computationally expensive for large state-action spaces without optimizations. \\ \hline
+        \textbf{Training Time} & Faster training time for smaller datasets. & Can be slow due to iterative exploration and learning. \\ \hline
+        \textbf{Robustness to Noise} & Susceptible to overfitting but can be mitigated with pruning or ensemble methods. & Tolerates noise in rewards but may require tuning to balance exploration and exploitation. \\ \hline
+        \textbf{Generalization} & May require ensemble techniques (e.g., Random Forests, Gradient Boosted Trees) for better generalization. & Learns general policies from experience but may overfit with insufficient exploration. \\ \hline
+        \textbf{Applicability} & Best for structured data and problems like classification, regression, and feature importance. & Best for problems requiring sequential decision-making (e.g., robotics, game AI). \\ \hline
+        \textbf{Resource Requirements} & Low to moderate computational resources, depending on data size and tree depth. & High computational and memory requirements, especially for complex environments. \\ \hline
+        \textbf{Learning Style} & One-shot learning based on labeled data. & Incremental learning through trial and error over multiple episodes. \\ \hline
+    \end{tabular}
+\caption{Comparison of Decision Trees and Q-Learning}
+\label{table:decision_comparison}
+\end{table}
+    
+\subsubsection{Summary}
+% Summarize the key findings and insights from the exploration.
+Overall, decision trees are a more simple and interpretable method for decision-making, 
+suitable for structured data and problems like classification and regression. 
+
+On the other hand, Q-Learning is a powerful reinforcement learning algorithm that learns 
+optimal policies through exploration and exploitation. It is well-suited for sequential 
+decision-making tasks in dynamic environments but requires more computational resources 
+and training time compared to decision trees.
+
+\subsection*{Issues}
+% Document any blockers, bugs, or unresolved questions. Include error messages if relevant.
+\begin{itemize}
+    \item One issue if using Q-learning would be the time to train the model.
+    \item Another issue is the complexity of the Q-learning algorithm and the need for a well-defined environment which may be difficult to achieve in with VEX unless using a simulator.
+    \item Decision trees may not be as effective for continuous state-action spaces and may not be well suited for dynamic environments with complex interactions.
+\end{itemize}
+% Example:
+% \begin{itemize}
+%    \item [Gazebo GUI Not Responding] – Tried restarting the simulation environment and the GUI, but the issue persisted.
+%    \item [Error: Unable to Load Model] – Received an error message when trying to load a custom model into the simulation environment.
+%    \item [ROS2 Environment Not Found] – The ROS2 environment was not found when trying to launch the simulation.
+% \end{itemize}
+
+% \subsection*{Code Snippets / Commands Used}
+% % Include any important code snippets, shell commands, or configurations that were part of the exploration.
+% \begin{lstlisting}
+%      \item
+% \end{lstlisting}
+% Example:
+% \textbf{Launch Simulation Environment:}
+% \begin{lstlisting}[language=bash]
+% # Example command to launch the simulation environment
+% ./scripts/launch_sim.sh
+% \end{lstlisting}
+% \textbf{Graph Plotting in Python:}
+% \begin{lstlisting}[language=python]
+%     # Example Python code snippet
+%     import numpy as np
+%     import matplotlib.pyplot as plt
+
+%     x = np.linspace(0, 10, 100)
+%     y = np.sin(x)
+
+%     plt.plot(x, y)
+%     plt.show()
+% \end{lstlisting}

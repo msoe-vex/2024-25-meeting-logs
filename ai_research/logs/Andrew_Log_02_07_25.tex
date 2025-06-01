@@ -1,0 +1,33 @@
+\section{VEX Reinforcement Learning}
+\timestamp{Andrew Needham}{[2/7/25]}{}
+
+\subsection{Goals}
+\begin{itemize}
+    \item Create a reinforcement learning environment for the VEX robot
+    \item Train the robot to use an optimal strategy to score as many points as possible
+    \item Update the structure of the environment to better represent the robot and field
+\end{itemize}
+
+\subsection{Methods}
+\begin{itemize}
+    \item Use Gymnasium and Stable Baselines3 to create the environment and train the robot
+    \item Use Slurm to run the training script on the cluster to train quickly
+\end{itemize}
+
+\subsection{Results}
+\begin{itemize}
+    \item Was able to create a basic environment with several actions and render each step
+    \item Updated the reward system to use the score of the field instead of arbitrary rewards assigned to each action based on results
+    \item The reward = score after action - score before action
+    \item After training for 500,000 steps, the robot was able to score about 24 points in 120 seconds
+    \item Updated code to GitHub repo: \href{https://github.com/msoe-vex/VEX-AI-Reinforcement-Learning.git}{https://github.com/msoe-vex/VEX-AI-Reinforcement-Learning.git}
+\end{itemize}
+
+\subsection{Action Items}
+\begin{itemize}
+    \item Update the structure of the environment to better represent the robot and field
+    \item Add different colors for rings
+    \item Add wall stakes
+    \item Add probability of actions succeeding
+    \item Update the environment to account for unknown and missing information about elements on the field
+\end{itemize}

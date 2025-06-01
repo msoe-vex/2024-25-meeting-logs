@@ -1,0 +1,33 @@
+\section{VEX Reinforcement Learning}
+\timestamp{Andrew Needham}{[2/17/25]}{}
+
+\subsection{Goals}
+\begin{itemize}
+    \item Create a reinforcement learning environment for the VEX robot
+    \item Train the robot to use an optimal strategy to score as many points as possible
+    \item Update the structure of the environment to better represent the robot and field
+    \item Optimize the environment and training process to improve the robot's performance
+\end{itemize}
+
+\subsection{Methods}
+\begin{itemize}
+    \item Use Gymnasium and Stable Baselines3 to create the environment and train the robot
+    \item Use Slurm to run the training script on the cluster to train quickly
+\end{itemize}
+
+\subsection{Results}
+\begin{itemize}
+    \item Consolidated actions to simplify the number of choices to lead to more optimal strategies
+    \item Added a small penalty to invalid actions to discourage the robot from performing them
+    \item Added an option to randomize the field to help generalize the robot's strategy
+    \item Gave the robot a FOV to determine what objects it can see
+    \item The robot now learns an optimal strategy much more effectively and consistently and can adapt to different field states
+    \item Updated code to GitHub repo: \href{https://github.com/msoe-vex/VEX-AI-Reinforcement-Learning.git}{https://github.com/msoe-vex/VEX-AI-Reinforcement-Learning.git}
+\end{itemize}
+
+\subsection{Action Items}
+\begin{itemize}
+    \item Add different colors for rings
+    \item Update the environment depending on the match type (skills or regular match)
+    \item Experiment with the PPO parameters to see if the robot can learn more effectively
+\end{itemize}

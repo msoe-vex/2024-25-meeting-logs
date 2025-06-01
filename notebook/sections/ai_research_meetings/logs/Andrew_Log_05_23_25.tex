@@ -1,0 +1,32 @@
+\section{Reinforcement Learning Model Integration}
+\timestamp{Andrew Needham}{[5/23/25]}{}
+
+\subsection{Goals}
+\begin{itemize}
+    \item Create a script to compile the policy into a compact inferencing model that can be used in the VEX program
+    \item Integrate the compiled model with communication between the VEX program and the Jetson Nano running the model
+    \item Test running the model on the Jetson Nano to ensure it can run in real-time
+\end{itemize}
+
+\subsection{Methods}
+\begin{itemize}
+    \item Use RlLib library to trace the policy from a checkpoint and compile it into a compact inferencing model for Pytorch
+    \item Get information about the current state of the environment and the actions taken by the agents from the VEX program and Intell RealSense camera
+    \item Use the compiled model to predict the next action for each agent based on the current state of the environment
+    \item Send the predicted action to the VEX program to be executed by the robot
+\end{itemize}
+
+\subsection{Results}
+\begin{itemize}
+    \item The script to compile the policy into a compact inferencing model was successfully created using RlLib
+    \item The model had to be traced instead of scripted due to the format of the policy and environment using PettingZoo
+    \item The Jetson Nano was able to get information about the current state of the environment and the actions taken by the agents from the VEX program and Intell RealSense camera
+    \item The script was able to run on the Jetson Nano to predict the next action for each agent based on dummy data
+    \item Updated code to GitHub repo: \href{https://github.com/msoe-vex/VAIC_24_25}{https://github.com/msoe-vex/VAIC_24_25}
+\end{itemize}
+
+\subsection{Action Items}
+\begin{itemize}
+    \item Ensure the model can run in real-time on the Jetson Nano with the VEX program using information from the Intell RealSense camera
+    \item Test the model in real time with the VEX program to ensure it can predict the next action for each agent based on the current state of the environment
+\end{itemize}

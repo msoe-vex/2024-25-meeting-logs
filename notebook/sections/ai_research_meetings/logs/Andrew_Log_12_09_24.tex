@@ -1,0 +1,32 @@
+\section{LemLib and CasADi Path Planning}
+\timestamp{Andrew Needham}{[12/9/24]}{}
+
+\subsection{Goals}
+\begin{itemize}
+    \item Update the solver to avoid the middle of the field
+    \item Add option for more obstacles to avoid
+    \item Make sure the solver outputting valid paths for LemLib
+    \item Update the cost function to minimize the amount of time
+\end{itemize}
+
+\subsection{Methods}
+\begin{itemize}
+    \item Review the existing code to determine what needs to be changed and what can be removed
+    \item Test the program on existing VEX drivetrain with the LemLib path program
+\end{itemize}
+
+\subsection{Results}
+\begin{itemize}
+    \item The solver splits the path to avoid the middle of the field
+    \item The path output is able to be used for LemLib however the speed is not being used correctly
+    \item The solver now minimizes the amount of time and dynamically changes the time step
+    \item GitHub repo for CasADi test program: \href{https://github.com/msoe-vex/CasADi-Test.git}{https://github.com/msoe-vex/CasADi-Test.git}
+    \item GitHub repo for another users implementation: \href{https://github.com/tianchenji/path-planning.git}{https://github.com/tianchenji/path-planning.git}
+\end{itemize}
+
+\subsection{Action Items}
+\begin{itemize}
+    \item Need to make sure the LemLib max speed parameter is being used correctly so that the path run properly
+    \item Possibly adjust the hit-box of the robot to make sure the shape of the robot is being used correctly
+    \item After that, will possibly work on converting the Python program to a C++ implementation
+\end{itemize}
