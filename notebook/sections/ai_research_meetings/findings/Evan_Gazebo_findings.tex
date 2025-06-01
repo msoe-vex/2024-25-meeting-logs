@@ -1,12 +1,12 @@
-\section*{Beginning With Gazebo}
+\section{Beginning With Gazebo}
 \timestamp{Evan Roegner}{[11/4/24]}{}
 
-\subsection*{Objective / Focus}
+\subsection{Objective / Focus}
 % Briefly describe the goal of this topic. Try to explain what you expolored in the topic you chose.
 % Example: The goal of this exploration was to understand the ROS2 environment and how to set up a simulation environment for the GHOST project.
 The goal for this was to explore the gazebo simulation to determine what its components are, and what role they serve and can do.
 
-\subsection*{Questions Explored}
+\subsection{Questions Explored}
 % List the specific questions or areas you focused on. You can paste the questions you have in the exploration topic and add any you found during the exploration.
 \begin{itemize}
     \item What information can the sim environment store?
@@ -19,7 +19,7 @@ The goal for this was to explore the gazebo simulation to determine what its com
 %     \item How can we interact with the simulation environment?
 % \end{itemize}
 
-\subsection*{Steps Taken / Methodology}
+\subsection{Steps Taken / Methodology}
 % Document the exact steps you followed, including paths to relevant files and commands used. If you tried several approaches, list them as separate lists.
 \begin{enumerate}
     \item Fixed the typo in the start\_sim\_launch file.
@@ -35,7 +35,7 @@ The goal for this was to explore the gazebo simulation to determine what its com
 %     \item Explore the simulation environment in the "default.world" file in the `04_Sim/ghost_sim/worlds` directory and the "models" menu in the Gazebo GUI.
 % \end{enumerate}
 
-\subsection*{Paths to Key Files / Code Locations}
+\subsection{Paths to Key Files / Code Locations}
 % Provide paths to relevant scripts, configuration files, or datasets used. If you used a script, provide the path to the script and the command used to run it.
 \begin{itemize}
     \item start\_sim\_launch: scripts -> start\_sim\_launch.py, run from VEXU\_GHOST directory with ./scripts/launch\_sim.sh
@@ -52,7 +52,7 @@ The goal for this was to explore the gazebo simulation to determine what its com
 %     \item **API Documentation:** [Link to relevant API or repo]
 % \end{itemize}
 
-\subsection*{Findings / Insights}
+\subsection{Findings / Insights}
 % Summarize the key things you learned or discovered.
 \begin{itemize}
     \item Typo and local directory line should be changed to world\_file = os.path.join(home\_dir, "VEXU\_GHOST", "04\_Sim", "ghost\_sim", "worlds", **INSERT WORLD NAME HERE**")
@@ -78,7 +78,7 @@ The goal for this was to explore the gazebo simulation to determine what its com
 %     \item GHOST has setup a controller interface for the robot in the `ghost_control` package.
 % \end{itemize}
 
-% \subsection*{Challenges / Issues}
+% \subsection{Challenges / Issues}
 % % Document any blockers, bugs, or unresolved questions. Include error messages if relevant.
 % \begin{itemize}
 %     \item [Challenge Title] - [How you attempted to solve it]
@@ -90,7 +90,7 @@ The goal for this was to explore the gazebo simulation to determine what its com
 %    \item [ROS2 Environment Not Found] – The ROS2 environment was not found when trying to launch the simulation.
 % \end{itemize}
 
-\subsection*{Code Snippets / Commands Used}
+\subsection{Code Snippets / Commands Used}
 % Include any important code snippets, shell commands, or configurations that were part of the exploration.
 \begin{lstlisting}
     

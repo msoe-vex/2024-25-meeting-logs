@@ -1,12 +1,12 @@
-\section*{Powering Jetson Orin Nano Over Battery}
+\section{Powering Jetson Orin Nano Over Battery}
 \timestamp{Evan Roegner}{[11/14/24]}{}
 
-\subsection*{Objective / Focus}
+\subsection{Objective / Focus}
 % Briefly describe the goal of this topic. Try to explain what you expolored in the topic you chose.
 % Example: The goal of this exploration was to understand the ROS2 environment and how to set up a simulation environment for the GHOST project
 The goal for this was figure out a method of powering the Jetson Orin Nano off of a 5V USB Power bank
 
-\subsection*{Questions Explored}
+\subsection{Questions Explored}
 % List the specific questions or areas you focused on. You can paste the questions you have in the exploration topic and add any you found during the exploration.
 \begin{itemize}
     \item What ports on the nano accept power?
@@ -21,7 +21,7 @@ The goal for this was figure out a method of powering the Jetson Orin Nano off o
 %     \item How can we interact with the simulation environment?
 % \end{itemize}
 
-\subsection*{Steps Taken / Methodology}
+\subsection{Steps Taken / Methodology}
 % Document the exact steps you followed, including paths to relevant files and commands used. If you tried several approaches, list them as separate lists.
 \begin{enumerate}
     \item Nano usb-c plugged into 15V=3A power
@@ -37,7 +37,7 @@ The goal for this was figure out a method of powering the Jetson Orin Nano off o
 %     \item Explore the simulation environment in the "default.world" file in the `04_Sim/ghost_sim/worlds` directory and the "models" menu in the Gazebo GUI.
 % \end{enumerate}
 
-\subsection*{Findings / Insights}
+\subsection{Findings / Insights}
 % Summarize the key things you learned or discovered.
 \begin{itemize}
     \item Our battery outputs at 5V, but the nano needs 9V-19V
@@ -55,13 +55,13 @@ The goal for this was figure out a method of powering the Jetson Orin Nano off o
 %     \item GHOST has setup a controller interface for the robot in the `ghost_control` package.
 % \end{itemize}
 
-\subsection*{Items needed}
+\subsection{Items needed}
 \begin{itemize}
     \item 5V USB -> 9V-19V 5.5mmx2.5mm Barrel, >= 20 Watt output
     \item Alternatively, generic 5V->9V-19V step-up adaptor with correct connections soldered on would work
 \end{itemize}
 
-\subsection*{Challenges / Issues}
+\subsection{Challenges / Issues}
 % Document any blockers, bugs, or unresolved questions. Include error messages if relevant.
 \begin{itemize}
     \item Need to find an applicable power adaptor, or potentially create our own with a generic step-up adapter.
